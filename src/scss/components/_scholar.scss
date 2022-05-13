@@ -1,0 +1,50 @@
+.scholar{
+  padding: 12.5rem 0px;
+  background-image: url(../../img/scholar/bg-image.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  &__container{
+    max-width: 1130px;
+  }
+  &__content{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @media (max-width:900px) {
+      justify-content: center;
+      gap: 50px;
+    }
+  }
+  &__heading{
+    text-align: center;
+  }
+  &__subtitle{
+    padding-top: 1.25rem;
+    font-size: 1.1875rem;
+  }
+  &__content{
+    padding-top: clamp(7rem, 4rem, 7rem);
+  }
+  &__descr-item{
+    @include aligned-flex;
+    gap: 30px;
+  }
+  &__descr{
+    text-align: center;
+    width: 50%;
+  }
+  &__join{
+    text-transform: uppercase;
+  }
+  &__button{
+    margin-top: 50px;
+  }
+  &__descr-top{
+    &>*:not(:last-child){
+      margin-bottom: 3.125rem;
+    }
+  }
+}

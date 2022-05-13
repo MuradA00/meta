@@ -1,0 +1,18 @@
+.partners{
+  padding:   calc(10px + 162.5 * (100vw - 375px) / 1920) 15px;
+  &__title{
+    text-align: center;
+    width: 100%;
+
+  }
+  &__content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 42px;
+    margin-top: 5rem;
+  }
+  &__link{
+    max-width: 25rem;
+  }
+}

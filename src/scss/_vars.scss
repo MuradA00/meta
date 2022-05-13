@@ -1,0 +1,128 @@
+// если вы хотите использовать sass-переменные - удалите root
+// colors
+:root {
+  // base
+  --font-family: 'Gotham';
+  --content-width: 1320px;
+  --container-offset: 15px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  // colors
+  --white-color: #fff;
+  --black-color: #000;
+  --blue-color: #2074D6;
+  --hovered-link: #31F3FF;
+  --fw-regular: 400;
+  --fw-Medium: 500;
+  --fw-Semibold: 600;
+  --fw-Bold: 700;
+  --pink-color: #FB3FFF;
+}
+
+$maxWidth: 1320;
+@mixin adaptiv-font($pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$addMobSize: $addSize + $addSize * 0.7;
+	@media (max-width: 767px) {
+		font-size: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$maxWidth}));
+	}
+	@media (min-width: 767px) {
+		font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$maxWidth}));
+	}
+}
+
+
+._container{
+  max-width: 1350px;
+  padding: 0 15px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.title__wrapper {
+  text-align: center;
+}
+.title_promo {
+  font-size: calc(28px + (38 + 38 * 0.25) * ((100vw - 375px) / 1920));
+  margin-bottom: 30px;
+}
+.title_colored {
+  max-width: 1100px;
+  display: inline-block;
+  font-weight: 300;
+  @include adaptiv-font(60, 32);
+  line-height: 102.2%;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #fff;
+  background-image: linear-gradient(
+      93.44deg,
+      #3b68e6 0.84%,
+      #31f3ff 50.94%,
+      #fb3fff 100%
+    ),
+    linear-gradient(0deg, #fff, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn {
+  background: radial-gradient(
+      66.58% 146.41% at -2.19% 16.98%,
+      #14bdff 0,
+      rgba(3, 57, 89, 0) 74.36%
+    ),
+    radial-gradient(80.2% 129.9% at 96.3% 0, #c51bff 0, rgba(3, 57, 89, 0) 100%),
+    radial-gradient(
+      72.79% 65.22% at 80.51% 92.28%,
+      rgba(68, 220, 255, 0.71) 0,
+      rgba(120, 199, 217, 0) 84.87%
+    ),
+    #3042ff;
+  box-shadow: 0 9px 26px rgba(64, 136, 224, 0.57),
+    inset 0 4px 13px rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  border: 0 solid rgba(255, 255, 255, 0.21);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 102.2%;
+  text-align: center;
+  letter-spacing: 0.05em;
+  margin: 0 auto;
+  display: block;
+  white-space: nowrap;
+  height: 65px;
+  width: 250px;
+  line-height: 65px;
+  color: #fff;
+  text-transform: uppercase;
+  transition: all 0.8s;
+}
+.btn:hover {
+  text-decoration: none;
+  color: #fff;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  background: radial-gradient(
+      66.58% 146.41% at -2.19% 16.98%,
+      #14bdff 0,
+      rgba(3, 57, 89, 0) 74.36%
+    ),
+    radial-gradient(80.2% 129.9% at 96.3% 0, #c51bff 0, rgba(3, 57, 89, 0) 100%),
+    radial-gradient(
+      72.79% 65.22% at 80.51% 92.28%,
+      rgba(68, 220, 255, 0.71) 0,
+      rgba(120, 199, 217, 0) 84.87%
+    ),
+    #82d9ff;
+}
+
+
+._default-title{
+  @include adaptiv-font(70, 32);
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+}

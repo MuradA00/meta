@@ -1,0 +1,29 @@
+.rent{
+  padding-bottom: 8.125rem;
+  background-image: url(../../img/rent/rent-bg.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  &__content{
+    margin-top: 7.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media(max-width:1050px) {
+      flex-wrap: wrap;
+      flex-direction: column-reverse;
+      justify-content: center;
+      gap: 50px;
+    }
+  }
+
+}
+
+@media (max-width: 1050px) {
+  .scholar{
+    &__descr{
+      width: 100%;
+    }
+  }
+}
